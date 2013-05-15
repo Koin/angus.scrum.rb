@@ -19,6 +19,7 @@
         <tr ng-repeat="product in products">
           <td>{{product.label}}</td>
           <td>
+            <a href="" class="btn btn-small btn-primary" ng-href="/product/{{product.id}}/stories.html"><i class="icon-circle-arrow-right icon-white"></i> Go</a>
             <a href="#myModal" class="btn btn-small" data-toggle="modal" ng-click="edit(product)"><i class="icon-edit"></i> Edit</a>
             <a href="" class="btn btn-small btn-danger" ng-click="delete(product, $index, $event)"><i class="icon-trash icon-white"></i> Delete</button>
           </td>
