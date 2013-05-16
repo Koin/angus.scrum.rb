@@ -1,0 +1,24 @@
+<div class="row-fluid">
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>Label</th>
+        <th>Description</th>
+        <th>Technical point</th>
+        <th>Functional point</th>
+        <th>State</th>
+        <th>Actions</th>
+      </tr><tr>
+    </tr></thead>
+    <tbody>
+      <tr ng-repeat="story in stories">
+        <td>{{story.label}}</td>
+        <td>{{story.description}}</td>
+        <td>{{story.technical_point}}</td>
+        <td>{{story.functional_point}}</td>
+        <td>{{story.state}}</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
