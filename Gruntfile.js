@@ -256,6 +256,14 @@ module.exports = function (grunt) {
             'styles/fonts/*'
           ]
         }]
+      },
+      glyphicons: {
+        files: [{
+          expand: true,
+          cwd: '<%= yeoman.app %>/components/bootstrap',
+          dest: '<%= yeoman.dist %>',
+          src: 'img/*.png'
+        }]
       }
     }
   });
