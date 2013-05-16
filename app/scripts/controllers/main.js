@@ -19,10 +19,8 @@ angular.module('angus.scrum.rbApp')
 
     $scope.delete = function(product, $index, $event) {
       $event.stopPropagation();
-      if(confirm('Are you sure?')) {
-        $scope.products.splice($index, 1);
-        product.$destroy();
-      }
+      $scope.products.splice($index, 1);
+      product.$destroy();
     };
 
   });
