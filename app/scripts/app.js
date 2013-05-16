@@ -7,7 +7,7 @@ angular.module('angus.scrum.rbApp', ['ngResource'])
         templateUrl: '/views/main.html',
         controller: 'MainCtrl'
       })
-      .when('/product/:product_id/stories.html', {
+      .when('/product/:productId/stories.html', {
         templateUrl: '/views/stories.html',
         controller: 'StoryCtrl'
       })
@@ -27,7 +27,7 @@ angular.module('angus.scrum.rbApp', ['ngResource'])
     });
   })
   .factory('Stories', function($resource, $routeParams) {
-    return $resource('http://api.scrum.rb.dev/products/' + $routeParams.product_id + '/stories/:id', {
+    return $resource('http://api.scrum.rb.dev/products/' + $routeParams.productId + '/stories/:id', {
       id: '@id'
     }, {
       query :   { method : 'GET', isArray : true },
