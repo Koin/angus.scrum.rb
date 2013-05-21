@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('angus.scrum.rbApp', ['ngResource'])
-  .config(function ($routeProvider, $locationProvider) {
+  .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: '/views/main.html',
@@ -14,7 +14,6 @@ angular.module('angus.scrum.rbApp', ['ngResource'])
       .otherwise({
         redirectTo: '/'
       });
-    $locationProvider.html5Mode(true);
   })
   .factory('Products', function($resource) {
     return $resource('http://api-scrum-rb.herokuapp.com/products/:id', {
