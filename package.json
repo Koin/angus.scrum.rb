@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "dependencies": {
     "gzippo" : "0.2.0",
-    "express" : "latest"
+    "express" : "3.2.6"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
