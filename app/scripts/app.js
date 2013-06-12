@@ -16,9 +16,10 @@ angular.module('angus.scrum.rbApp', ['ngResource'])
       });
   })
   .factory('Products', function($resource) {
-    return $resource('http://api-scrum-rb.herokuapp.com/products/:id', {
+    return $resource('http://api.scrum.rb.dev/products/:id', {
       id: '@id'
     }, {
+      get:      { method : 'GET' },
       query :   { method : 'GET', isArray : true },
       save :    { method : 'PUT' },
       create :  { method : 'POST' },
@@ -26,7 +27,7 @@ angular.module('angus.scrum.rbApp', ['ngResource'])
     });
   })
   .factory('Stories', function($resource, $routeParams) {
-    return $resource('http://api-scrum-rb.herokuapp.com/products/' + $routeParams.productId + '/stories/:id', {
+    return $resource('http://api.scrum.rb.dev/products/' + $routeParams.productId + '/stories/:id', {
       id: '@id'
     }, {
       query :   { method : 'GET', isArray : true },
