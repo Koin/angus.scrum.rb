@@ -1,5 +1,7 @@
 'use strict';
 
+var apiServer = 'api.scrum.rb.dev';
+
 angular.module('angus.scrum.rbApp', ['ngResource'])
   .config(function ($routeProvider) {
     $routeProvider
@@ -16,7 +18,7 @@ angular.module('angus.scrum.rbApp', ['ngResource'])
       });
   })
   .factory('Products', function($resource) {
-    return $resource('http://api.scrum.rb.dev/products/:id', {
+    return $resource('http://' + apiServer + '/products/:id', {
       id: '@id'
     }, {
       get:      { method : 'GET' },
@@ -26,8 +28,8 @@ angular.module('angus.scrum.rbApp', ['ngResource'])
       destroy : { method : 'DELETE' }
     });
   })
-  .factory('Stories', function($resource, $routeParams) {
-    return $resource('http://api.scrum.rb.dev/products/' + $routeParams.productId + '/stories/:id', {
+  .factory('Stories', function($resource) {
+    return $resource('http://' + apiServer + '/stories/:id', {
       id: '@id'
     }, {
       query :   { method : 'GET', isArray : true },
