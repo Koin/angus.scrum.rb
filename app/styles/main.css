@@ -20,3 +20,11 @@ body {
 .story-drop {
   opacity: 0.4;
 }
+
+.loading {
+  background: url(../images/pacman.gif) no-repeat left center;
+  display: inline-block;
+  min-height: 24px;
+  min-width: 24px;
+  padding-left: 30px;
+}
