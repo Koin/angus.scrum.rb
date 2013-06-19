@@ -5,14 +5,14 @@ angular.module('angus.scrum.rbApp')
 
     $scope.productId = $routeParams.productId;
     $scope.product = Products.get({id:$scope.productId});
-    $scope.stories = Stories.query({productId:$scope.productId});
+    $scope.stories = Stories.query({product_id:$scope.productId});
 
     $scope.edit = function(story) {
       $scope.story = story;
     };
 
     $scope.save = function() {
-      $scope.story.productId = $scope.productId;
+      $scope.story.product_id = $scope.productId;
       if($scope.story.$save) {
         $scope.story.$save();
       } else {
