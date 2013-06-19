@@ -1,6 +1,6 @@
 'use strict';
 
-var apiServer = 'api-scrum-rb.herokuapp.com/';
+var apiServer = 'api-scrum-rb.herokuapp.com';
 
 angular.module('angus.scrum.rbApp', ['ngResource'])
   .config(function ($routeProvider) {
