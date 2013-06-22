@@ -4,7 +4,15 @@ angular.module('angus.scrum.rbApp')
   .controller('StoryCtrl', function ($scope, $rootScope, $routeParams, Products, Stories) {
 
     $scope.productId = $routeParams.productId;
-    $scope.product = Products.get({id:$scope.productId});
+
+    $rootScope.breadcrumbs = [
+      {name: 'Home', path: '/'},
+    ];
+
+    $scope.product = Products.get({id:$scope.productId}, function(product) {
+      $rootScope.breadcrumbs.push({name: product.label});
+    });
+
     $scope.stories = Stories.query({product_id:$scope.productId});
 
     $scope.edit = function(story) {

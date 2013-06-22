@@ -35,13 +35,18 @@
             <span class="icon-bar"></span>
           </button>
           <a class="brand" ng-href="/">angus.scrum.rb</a>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li><a href="" ng-href="/">Products</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
         </div>
       </div>
+    </div>
+
+    <div class="container-fluid">
+      <ul class="breadcrumb">
+        <li ng-repeat="breadcrumb in breadcrumbs" ng-class="{active:$last}">
+          <a ng-hide="$last" href="" ng-href="{{breadcrumb.path}}">{{breadcrumb.name}}</a>
+          <span ng-show="$last">{{breadcrumb.name}}</span>
+          <span ng-hide="$last" class="divider">/</span>
+        </li>
+      </ul>
     </div>
 
     <!-- Add your site or application content here -->
@@ -57,8 +62,9 @@
     <!-- build:js scripts/scripts.js -->
     <script src="scripts/app.js"></script>
     <script src="scripts/directives/dnd.js"></script>
-    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/product.js"></script>
     <script src="scripts/controllers/story.js"></script>
+    <script src="scripts/controllers/task.js"></script>
     <!-- endbuild -->
   </body>
 </html>

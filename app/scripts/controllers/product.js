@@ -1,7 +1,11 @@
 'use strict';
 
 angular.module('angus.scrum.rbApp')
-  .controller('MainCtrl', function ($scope, Products) {
+  .controller('ProductCtrl', function ($scope, $rootScope, Products) {
+
+    $rootScope.breadcrumbs = [
+      {name: 'Home', path: '/'},
+    ];
 
     $scope.products = Products.query();
 

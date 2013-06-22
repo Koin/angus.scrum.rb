@@ -17,7 +17,9 @@ body {
 }
 
 .story-drag,
-.story-drop {
+.story-drop,
+.task-drag,
+.task-drop {
   opacity: 0.4;
 }
 
