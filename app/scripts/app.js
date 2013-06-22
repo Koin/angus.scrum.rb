@@ -6,8 +6,8 @@ angular.module('angus.scrum.rbApp', ['ngResource'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: '/views/main.html',
-        controller: 'MainCtrl'
+        templateUrl: '/views/products.html',
+        controller: 'ProductCtrl'
       })
       .when('/product/:productId/stories.html', {
         templateUrl: '/views/stories.html',

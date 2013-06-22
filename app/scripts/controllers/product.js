@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('angus.scrum.rbApp')
-  .controller('MainCtrl', function ($scope, Products) {
+  .controller('ProductCtrl', function ($scope, Products) {
 
     $scope.products = Products.query();
 
