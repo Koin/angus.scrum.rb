@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <link rel="stylesheet" href="styles/9e6d27ff.main.css">
+    <link rel="stylesheet" href="styles/824246fb.main.css">
   </head>
   <body ng-app="angus.scrum.rbApp">
     <!--[if lt IE 7]>
@@ -31,25 +31,30 @@
             <span class="icon-bar"></span>
           </button>
           <a class="brand" ng-href="/">angus.scrum.rb</a>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li><a href="" ng-href="/">Products</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
         </div>
       </div>
+    </div>
+
+    <div class="container-fluid">
+      <ul class="breadcrumb">
+        <li ng-repeat="breadcrumb in breadcrumbs" ng-class="{active:$last}">
+          <a ng-hide="$last" href="" ng-href="{{breadcrumb.path}}">{{breadcrumb.name}}</a>
+          <span ng-show="$last">{{breadcrumb.name}}</span>
+          <span ng-hide="$last" class="divider">/</span>
+        </li>
+      </ul>
     </div>
 
     <!-- Add your site or application content here -->
     <div class="container-fluid" ng-view=""></div>
 
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular-resource.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular-cookies.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular-sanitize.min.js"></script>
+    <script src="components/angular/angular.js"></script>
+    <script src="components/angular-resource/angular-resource.js"></script>
+    <script src="components/angular-cookies/angular-cookies.js"></script>
+    <script src="components/angular-sanitize/angular-sanitize.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script src="components/bootstrap/docs/assets/js/bootstrap.js"></script>
 
-    <script src="scripts/95000ca0.scripts.js"></script>
+    <script src="scripts/5d5bb8c8.scripts.js"></script>
   </body>
 </html>
