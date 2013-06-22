@@ -13,6 +13,10 @@ angular.module('angus.scrum.rbApp', ['ngResource'])
         templateUrl: '/views/stories.html',
         controller: 'StoryCtrl'
       })
+      .when('/product/:productId/story/:storyId/tasks.html', {
+        templateUrl: '/views/tasks.html',
+        controller: 'TaskCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
@@ -30,6 +34,16 @@ angular.module('angus.scrum.rbApp', ['ngResource'])
   })
   .factory('Stories', function($resource) {
     return $resource('http://' + apiServer + '/stories/:id', {
+      id: '@id'
+    }, {
+      query :   { method : 'GET', isArray : true },
+      save :    { method : 'PUT' },
+      create :  { method : 'POST' },
+      destroy : { method : 'DELETE' }
+    });
+  })
+  .factory('Tasks', function($resource) {
+    return $resource('http://' + apiServer + '/tasks/:id', {
       id: '@id'
     }, {
       query :   { method : 'GET', isArray : true },
