@@ -39,6 +39,16 @@
       </div>
     </div>
 
+    <div class="container-fluid">
+      <ul class="breadcrumb">
+        <li ng-repeat="breadcrumb in breadcrumbs" ng-class="{active:$last}">
+          <a ng-hide="$last" href="" ng-href="{{breadcrumb.path}}">{{breadcrumb.name}}</a>
+          <span ng-show="$last">{{breadcrumb.name}}</span>
+          <span ng-hide="$last" class="divider">/</span>
+        </li>
+      </ul>
+    </div>
+
     <!-- Add your site or application content here -->
     <div class="container-fluid" ng-view></div>
 
